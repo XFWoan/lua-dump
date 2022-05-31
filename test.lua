@@ -1,7 +1,6 @@
 local dump = require "dump"
 local userdata = require "userdata"
 
---region dump unit test
 local test_case = {
     { "nil", nil },
     { "true", true },
@@ -18,9 +17,7 @@ local test_case = {
 for _, v in ipairs(test_case) do
     print(string.format("%-10s: %s \n", v[1], dump(v[2])))
 end
---endregion dump unit test
 
---region dump table test
 local empty_tbl = {}
 local nested_tbl = { test_case }
 local dict_tbl = {
@@ -40,6 +37,5 @@ setmetatable(test_case, {
 })
 
 print(string.format("%-10s: \n%s", "table", dump(test_case)))
---endregion dump table test
 
 
