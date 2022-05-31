@@ -34,9 +34,9 @@ table.insert(test_case, { "table", {
 } })
 
 setmetatable(test_case, {
-    __div      = function()
+    __div = function()
     end,
-    nested_tbl = nested_tbl,
+    self  = test_case,
 })
 
 print(string.format("%-10s: \n%s", "table", dump(test_case)))
